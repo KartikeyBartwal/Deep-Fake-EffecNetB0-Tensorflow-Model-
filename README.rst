@@ -1,4 +1,4 @@
-docs/Screenshot from 2024-08-08 03-05-46.png
+https://github.com/KartikeyBartwal/Deep-Fake-EffecNetB0-Tensorflow-Model-/blob/master/docs/Screenshot%20from%202024-08-08%2003-05-46.png
 
 =================
 Deep-Fake-EffecNetB0-Tensorflow
