@@ -1,4 +1,3 @@
-https://apicms.thestar.com.my/uploads/images/2021/02/11/thumbs/700/1041507
 
 =================
 Deep-Fake-EffecNetB0-Tensorflow
@@ -16,24 +15,28 @@ Deep-Fake-EffecNetB0-Tensorflow
         :alt: Documentation Status
 
 
-
-
-Python Boilerplate contains all the boilerplate you need to create a Python package.
-
+EfficientNetB0 Deep Learning is a Python package designed to facilitate the training and evaluation of deep learning models using the EfficientNetB0 architecture for image classification tasks.
 
 * Free software: MIT license
-* Documentation: https://effnetb0-deep-learning.readthedocs.io.
-
+* Documentation: https://effnetb0-deep-learning.readthedocs.io
 
 Features
 --------
 
-* TODO
+* **Model Training**: Train models on custom datasets with the ability to fine-tune parameters.
+  
+* **Pre-trained Weights**: Utilize pre-trained weights for improved performance on image classification tasks.
+  
+* **Model Evaluation**: Assess model performance with various metrics including accuracy and loss graphs.
+  
+* **Logging**: Track training progress and performance metrics through detailed logs.
+  
+* **Custom Dataset Handling**: Easily manage datasets with support for structured training, validation, and testing splits.
 
-Credits
--------
+Installation
+------------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+To install this package, you can use pip:
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+```bash
+pip install effnetb0-deep-learning
