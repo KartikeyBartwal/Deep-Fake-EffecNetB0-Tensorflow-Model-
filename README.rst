@@ -80,17 +80,16 @@ We need to split the dataset into training, validation, and testing sets (for ex
 Step 3 - Model Training
 ------------------------
 
-For model training, EfficientNet is used as the backbone. Given that most of the deepfake videos are synthesized using a frame-by-frame approach, we have formulated the deepfake detection task as a binary classification problem applicable to both video and image content.
+We use EfficientNet as the backbone for model training, treating the deepfake detection task as a binary classification problem applicable to both video and image content.
 
-In this code sample, we have adapted the EfficientNet B0 model in several ways:
+In this code implementation, we modified the EfficientNet B0 model by:
 
-- The top input layer is replaced by an input size of 128x128 with a depth of 3.
-- The last convolutional output from B0 is fed to a global max pooling layer.
-- Two additional fully connected layers have been introduced with ReLU activations.
-- A final output layer with Sigmoid activation serves as a binary classifier.
+-Changing the initial input layer to accept 128x128 images with a depth of 3.
+-Connecting the last convolutional output to a global max pooling layer.
+-Adding two fully connected layers with ReLU activations.
+-Utilizing a Sigmoid activation in the output layer to act as a binary classifier.
 
-Thus, given a colored square image as the network input, we expect the model to compute an output between 0 and 1, indicating the probability of the input image being either deepfake (0) or pristine (1).
-
+Thus, the model is expected to produce an output between 0 and 1 for a colored square image, indicating the probability of the image being either a deepfake (0) or genuine (1).
 Run the following command to start training:
 
 .. code-block:: bash
