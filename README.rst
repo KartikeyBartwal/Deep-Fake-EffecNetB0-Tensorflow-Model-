@@ -84,10 +84,10 @@ We use EfficientNet as the backbone for model training, treating the deepfake de
 
 In this code implementation, we modified the EfficientNet B0 model by:
 
--Changing the initial input layer to accept 128x128 images with a depth of 3.
--Connecting the last convolutional output to a global max pooling layer.
--Adding two fully connected layers with ReLU activations.
--Utilizing a Sigmoid activation in the output layer to act as a binary classifier.
+* Changing the initial input layer to accept 128x128 images with a depth of 3.
+* Connecting the last convolutional output to a global max pooling layer.
+* Adding two fully connected layers with ReLU activations.
+* Utilizing a Sigmoid activation in the output layer to act as a binary classifier.
 
 Thus, the model is expected to produce an output between 0 and 1 for a colored square image, indicating the probability of the image being either a deepfake (0) or genuine (1).
 Run the following command to start training:
