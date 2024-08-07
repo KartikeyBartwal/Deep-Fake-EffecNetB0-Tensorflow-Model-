@@ -1,4 +1,4 @@
-https://apicms.thestar.com.my/uploads/images/2021/02/11/thumbs/700/1041507.webp
+https://apicms.thestar.com.my/uploads/images/2021/02/11/thumbs/700/1041507
 
 =================
 Deep-Fake-EffecNetB0-Tensorflow
