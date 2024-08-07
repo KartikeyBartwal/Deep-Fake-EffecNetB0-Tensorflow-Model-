@@ -1,3 +1,4 @@
+docs/Screenshot from 2024-08-08 03-05-46.png
 
 =================
 Deep-Fake-EffecNetB0-Tensorflow
@@ -34,9 +35,64 @@ Features
 * **Custom Dataset Handling**: Easily manage datasets with support for structured training, validation, and testing splits.
 
 Installation
-------------
+============
 
-To install this package, you can use pip:
+To install the required packages, run:
 
-```bash
-pip install effnetb0-deep-learning
+.. code-block:: bash
+
+    pip install -r requirements.txt
+
+Usage
+=====
+
+Step 0 - Convert Video Frames to Individual Images
+--------------------------------------------------
+
+To extract all the video frames from the acquired deepfake datasets and save them as individual images for further processing, run:
+
+.. code-block:: bash
+
+    python 00-convert_video_to_image.py
+
+Step 1 - Extract Faces from the Deepfake Images with MTCNN
+-----------------------------------------------------------
+
+To extract faces from the deepfake images, use the pre-trained MTCNN model from the following GitHub repository:
+
+https://github.com/ipazc/mtcnn
+
+Run the following command:
+
+.. code-block:: bash
+
+    python 01a-crop_faces_with_mtcnn.py
+
+Step 2 - Balance and Split Datasets into Various Folders
+--------------------------------------------------------
+
+We need to split the dataset into training, validation, and testing sets (for example, in the ratio of 80:10:10) as the final step in the data preparation phase. Run:
+
+.. code-block:: bash
+
+    python 02-prepare_fake_real_dataset.py
+
+Step 3 - Model Training
+------------------------
+
+For model training, EfficientNet is used as the backbone. Given that most of the deepfake videos are synthesized using a frame-by-frame approach, we have formulated the deepfake detection task as a binary classification problem applicable to both video and image content.
+
+In this code sample, we have adapted the EfficientNet B0 model in several ways:
+
+- The top input layer is replaced by an input size of 128x128 with a depth of 3.
+- The last convolutional output from B0 is fed to a global max pooling layer.
+- Two additional fully connected layers have been introduced with ReLU activations.
+- A final output layer with Sigmoid activation serves as a binary classifier.
+
+Thus, given a colored square image as the network input, we expect the model to compute an output between 0 and 1, indicating the probability of the input image being either deepfake (0) or pristine (1).
+
+Run the following command to start training:
+
+.. code-block:: bash
+
+    python 03-train_cnn.py
